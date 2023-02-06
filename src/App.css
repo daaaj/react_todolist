@@ -1,11 +1,17 @@
-@font-face {
+/* @font-face {
     font-family: 'HS-Regular';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/HS-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+} */
+@font-face {
+    font-family: 'Bazzi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/Bazzi.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 * {
-    font-family: 'HS-Regular';
+    font-family: 'Bazzi';
 }
 .App {
     max-width: 1200px;
@@ -79,6 +85,7 @@
 
     padding-left: 20px;
     font-size: 1.5em;
+    font-weight: bold;
 }
 
 .todo_area {
