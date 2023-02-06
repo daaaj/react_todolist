@@ -1,38 +1,131 @@
+@font-face {
+    font-family: 'HS-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/HS-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    font-family: 'HS-Regular';
+}
 .App {
-  text-align: center;
+    max-width: 1200px;
+    min-width: 800px;
+
+    margin: 0px auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 50px;
+    font-size: 1.5em;
+    padding: 0px 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.addArea,
+.addLeft {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 100px;
+}
+.addArea {
+    background-color: #243763;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+
+    font-size: 1.2em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.add_title_content {
+    display: flex;
+    align-items: center;
+}
+.add_title_content > span {
+    margin-right: 15px;
+}
+.add_title_content > input {
+    border-radius: 10px;
+    width: 220px;
+    height: 40px;
+    border: none;
+
+    margin-right: 15px;
+    padding: 0px 10px;
+
+    font-size: 1em;
 }
 
-.App-link {
-  color: #61dafb;
+.addRight > button {
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    background-color: #6096b4;
+    color: white;
+    font-size: 0.9em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.working,
+.done {
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+
+    padding-left: 20px;
+    font-size: 1.5em;
+}
+
+.todo_area {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin: 0px 20px;
+    min-width: 500px;
+}
+.todo {
+    height: 150px;
+    padding: 20px;
+    margin-bottom: 30px;
+
+    border: solid 5px #11244f;
+    border-radius: 10px;
+}
+.todo_title {
+    display: block;
+
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+.todo_content {
+    display: block;
+    margin-bottom: 40px;
+}
+.todo_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.todo_btn > button {
+    width: 120px;
+    height: 40px;
+
+    margin: 0px 10px;
+
+    border-radius: 10px;
+    font-size: 1em;
+}
+.delete_btn {
+    background-color: white;
+    border: 2px solid #d70303;
+}
+.done_btn {
+    background-color: #243763;
+    border: 2px solid #243763;
+    color: white;
 }
