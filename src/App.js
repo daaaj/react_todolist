@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import './App.css';
-import AddTodo from './component/AddTodo';
 import TodoList from './component/TodoList';
 import DoneTodoList from './component/DoneTodoList';
+import Button from './component/Button';
 
 function App() {
     const [todoList, setTodoList] = useState([
@@ -51,12 +51,13 @@ function App() {
         const deleteTodoList = todoList.filter((list) => list.num != num);
         setTodoList([...deleteTodoList]);
     };
+
     // 완료하기
     const doneTodo = (num) => {
         // 안에 값 바꾸기!!!!
         setTodoList(todoList.map((list) => (list.num == num ? { ...list, done: 1 } : list)));
 
-        console.log(todoList);
+        //console.log(todoList);
     };
     // 취소하기
     const returnTodo = (num) => {
@@ -88,7 +89,7 @@ function App() {
                 </div>
                 <div className="addRight">
                     {/* <button onClick={addButton}>추가하기</button> */}
-                    <AddTodo addTodo={addTodo}>추가하기</AddTodo>
+                    <Button onClick={addTodo} name={'추가하기'}></Button>
                 </div>
             </div>
             <div className="working">Working..🔥</div>
