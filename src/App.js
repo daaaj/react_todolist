@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import './App.css';
 import TodoList from './component/TodoList';
-import DoneTodoList from './component/DoneTodoList';
 import Button from './component/Button';
 import Input from './component/Input';
 
@@ -10,13 +9,13 @@ function App() {
         {
             num: 1,
             title: '아아악',
-            content: '아아아아아악',
+            content: '아아악',
             done: 0,
         },
         {
             num: 2,
-            title: '으으으으으으ㅡ악',
-            content: '으으응으으으으으악',
+            title: '으으악',
+            content: '으으악',
             done: 0,
         },
     ]);
@@ -48,27 +47,17 @@ function App() {
     };
     // 삭제하기
     const deleteTodo = (num) => {
-        // filter로 num꺼빼고 화면에 보여주기!!
+        // filter로 num꺼 빼고 화면에 보여주기!!
         const deleteTodoList = todoList.filter((list) => list.num != num);
         setTodoList([...deleteTodoList]);
     };
-
     // 완료하기
     const doneTodo = (num) => {
-        // 안에 값 바꾸기!!!!
+        // done 값 바꾸기
         setTodoList(todoList.map((list) => (list.num == num ? { ...list, done: 1 } : list)));
-
-        //console.log(todoList);
     };
     // 취소하기
     const returnTodo = (num) => {
-        /*
-        const returnTodoList = todoList.filter((list) => list.num == num);
-        returnTodoList.map((list) => {
-            list.done = 0;
-        });
-        setTodoList([...todoList, returnTodoList]);
-        */
         setTodoList(todoList.map((list) => (list.num == num ? { ...list, done: 0 } : list)));
     };
     return (
@@ -89,17 +78,15 @@ function App() {
                     </div>
                 </div>
                 <div className="addRight">
-                    {/* <button onClick={addButton}>추가하기</button> */}
-                    <Button onClick={addTodo} name={'추가하기'}></Button>
+                    <Button onClick={addTodo}>추가하기</Button>
                 </div>
             </div>
             <div className="working">Working..🔥</div>
             <div className="todo_area">
-                {/* todo는 리스트니깐 map으로 꺼낼수있지요?? */}
                 {todoList
                     .filter((list) => list.done == 0)
                     .map((list, i) => {
-                        return <TodoList key={i} list={list} deleteTodo={deleteTodo} doneTodo={doneTodo}></TodoList>;
+                        return <TodoList key={i} list={list} deleteTodo={deleteTodo} changeTodo={doneTodo}></TodoList>;
                     })}
             </div>
 
@@ -108,7 +95,7 @@ function App() {
                 {todoList
                     .filter((list) => list.done == 1)
                     .map((list, i) => {
-                        return <DoneTodoList key={i} list={list} deleteTodo={deleteTodo} returnTodo={returnTodo}></DoneTodoList>;
+                        return <TodoList key={i} list={list} deleteTodo={deleteTodo} changeTodo={returnTodo}></TodoList>;
                     })}
             </div>
         </div>
