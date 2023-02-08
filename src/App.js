@@ -3,6 +3,7 @@ import './App.css';
 import TodoList from './component/TodoList';
 import DoneTodoList from './component/DoneTodoList';
 import Button from './component/Button';
+import Input from './component/Input';
 
 function App() {
     const [todoList, setTodoList] = useState([
@@ -80,11 +81,11 @@ function App() {
                 <div className="addLeft">
                     <div className="add_title_content">
                         <span>제목</span>
-                        <input value={title} onChange={titleChange} />
+                        <Input value={title} onChange={titleChange} />
                     </div>
                     <div className="add_title_content">
                         <span>내용</span>
-                        <input value={content} onChange={contentChange} />
+                        <Input value={content} onChange={contentChange} />
                     </div>
                 </div>
                 <div className="addRight">
